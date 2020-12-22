@@ -117,7 +117,7 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Close Vault!"))
         self.pushButton_2.setText(_translate("Dialog", "Lock Files"))
         self.label.setText(_translate("Dialog", "Enter the path:"))
-        self.label_2.setText(_translate("Dialog", "Welcome to Project-X"))
+        self.label_2.setText(_translate("Dialog", "Project-X ~ Secure Vault"))
         self.label_3.setText(_translate("Dialog", "Locked Files:"))
         self.label_4.setText(_translate("Dialog", "Enter File Name:"))
         self.pushButton_3.setText(_translate("Dialog", "Unlock Files"))
@@ -158,7 +158,8 @@ class Ui_Dialog(object):
         for i in range(101): 
             time.sleep(0.025) 
             self.progressBar.setValue(i) 
-
+        self.progressBar.setValue(0) 
+        
         
 if __name__ == "__main__":
     import sys
