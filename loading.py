@@ -13,7 +13,7 @@ import time
 import os
 
 def decrypt():
-    os.system("konsole -e cryfs basedir mountdir")   
+    os.system('start /wait cmd /c cryfs basedir mountdir')   
     dir = os.listdir("mountdir") 
     return len(dir)
 
@@ -32,7 +32,7 @@ class Ui_Dialog(object):
         Dialog.setSizeGripEnabled(False)
         Dialog.setModal(False)
         self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(190, 20, 221, 31))
+        self.label_2.setGeometry(QtCore.QRect(155, 20, 300, 31))
         font = QtGui.QFont()
         font.setFamily("Orbitron")
         font.setPointSize(18)
@@ -86,9 +86,9 @@ class Ui_Dialog(object):
         else:
             print("Files unvaulted succesfully!")
             self.label.setText(QtCore.QCoreApplication.translate("Dialog", "Project-X is Decrypting Files..."))
-            for i in range(101): 
-                time.sleep(0.05) 
-                self.progressBar.setValue(i) 
+            #for i in range(101): 
+            #    time.sleep(0.05) 
+            self.progressBar.setValue(100) 
             Dialog.close()
         
     def passDecry(self):

@@ -1,5 +1,5 @@
 import os
 def encrypt():
-    state=os.system("cryfs-unmount mountdir")
+    state=os.system("fusermount -u mountdir")
     return state
 encrypt()

@@ -1,4 +1,4 @@
 # Project-X
-A Secure Vault for Linux!
+A Secure Vault for Bindows!
 
-run ./startX.sh to explore!
+run .\startX.bat to explore!
