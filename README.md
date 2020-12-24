@@ -12,4 +12,4 @@ Steps:-
 2. run startX.bat
 3. Click on Open Vault button (default password is 0000)
 4. Manually close the CMD window which was opened for entering the password! (Ahh! just Bindowsy things... Will make this automatic like Linux in future.)
-5. Explore the main window (Lock, Unlock, Close Valut)
+5. Explore the main window (Lock, Unlock, Close Vault)
