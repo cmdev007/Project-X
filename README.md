@@ -2,10 +2,10 @@
 ## A Secure Vault for Bindows!
 
 Requirements:-
-Cryfs from https://github.com/cryfs/cryfs/releases/download/0.10.2/cryfs-0.10.2-win64.msi
-Python 3.x
-Orbitron Fonts (optional)
-URW Gothic Fonts (optional)
+1. Cryfs from https://github.com/cryfs/cryfs/releases/download/0.10.2/cryfs-0.10.2-win64.msi
+2. Python 3.x
+3. Orbitron Fonts (optional)
+4. URW Gothic Fonts (optional)
 
 Steps:-
 1. clone the project
