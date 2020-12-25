@@ -32,7 +32,7 @@ class Ui_Dialog(object):
         Dialog.setSizeGripEnabled(False)
         Dialog.setModal(False)
         self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(190, 20, 221, 31))
+        self.label_2.setGeometry(QtCore.QRect(175, 20, 240, 31))
         font = QtGui.QFont()
         font.setFamily("Orbitron")
         font.setPointSize(18)

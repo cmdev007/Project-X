@@ -57,7 +57,7 @@ class Ui_Dialog(object):
         self.label.setGeometry(QtCore.QRect(40, 490, 111, 22))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(130, 20, 341, 31))
+        self.label_2.setGeometry(QtCore.QRect(110, 20, 371, 31))
         font = QtGui.QFont()
         font.setFamily("Orbitron")
         font.setPointSize(18)
@@ -134,6 +134,7 @@ class Ui_Dialog(object):
             self.label_5.setText(_translate("Dialog", "Encrypting Files..."))
             self.doAction()
             self.label_5.setText(_translate("Dialog", " "))
+            self.lineEdit.clear()
         else:
             self.label_5.setText(_translate("Dialog", "No such file/directory!"))
         
@@ -144,6 +145,7 @@ class Ui_Dialog(object):
             self.label_5.setText(_translate("Dialog", "Decrypting Files..."))
             self.doAction()
             self.label_5.setText(_translate("Dialog", " "))
+            self.lineEdit_2.clear()
         else:
             self.label_5.setText(_translate("Dialog", "No such file/directory!"))
 
