@@ -168,8 +168,8 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>630</y>
+     <x>160</x>
+     <y>640</y>
      <width>104</width>
      <height>41</height>
     </rect>
@@ -237,6 +237,26 @@
    </property>
    <property name="text">
     <string>Change Password</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>640</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>URW Gothic</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Open Folder</string>
    </property>
   </widget>
  </widget>

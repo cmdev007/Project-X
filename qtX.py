@@ -85,7 +85,7 @@ class Ui_Dialog(object):
         self.label_4.setGeometry(QtCore.QRect(30, 590, 121, 22))
         self.label_4.setObjectName("label_4")
         self.pushButton_3 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_3.setGeometry(QtCore.QRect(240, 630, 104, 41))
+        self.pushButton_3.setGeometry(QtCore.QRect(160, 640, 104, 41))
         self.pushButton_3.clicked.connect(self.passUnmove)
         self.pushButton_3.clicked.connect(self.refreshList)
         font = QtGui.QFont()
@@ -116,6 +116,15 @@ class Ui_Dialog(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.clicked.connect(self.changePass)
+        self.pushButton_5 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_5.setGeometry(QtCore.QRect(320, 640, 111, 41))
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_5.clicked.connect(self.browsefold)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -132,6 +141,7 @@ class Ui_Dialog(object):
         self.pushButton_3.setText(_translate("Dialog", "Unlock Files"))
         self.label_5.setText(_translate("Dialog", " "))
         self.pushButton_4.setText(_translate("Dialog", "Change Password"))
+        self.pushButton_5.setText(_translate("Dialog", "Open Folder"))
     
     def refreshList(self):
         text=os.popen("ls mountdir").read()
@@ -188,7 +198,11 @@ class Ui_Dialog(object):
                         self.label_5.setText(_translate("Dialog", "Changing Password..."))
                         self.doAction()
                         self.label_5.setText(_translate("Dialog", " "))
-        
+
+    def browsefold(self):
+        os.system("dolphin unlockdir")
+
+   
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
