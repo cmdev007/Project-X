@@ -34,7 +34,7 @@ class Ui_Dialog(object):
         Dialog.setSizeGripEnabled(False)
         Dialog.setModal(False)
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(240, 720, 104, 41))
+        self.pushButton.setGeometry(QtCore.QRect(160, 720, 104, 41))
         font = QtGui.QFont()
         font.setFamily("URW Gothic")
         font.setBold(False)
@@ -107,14 +107,23 @@ class Ui_Dialog(object):
         self.progressBar.setGeometry(QtCore.QRect(170, 450, 241, 24))
         #self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
-        
+        self.pushButton_4 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_4.setGeometry(QtCore.QRect(320, 720, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_4.clicked.connect(self.changePass)
+
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Project-X~Vault"))
-        self.pushButton.setText(_translate("Dialog", "Close Vault!"))
+        self.pushButton.setText(_translate("Dialog", "Lock Vault!"))
         self.pushButton_2.setText(_translate("Dialog", "Lock Files"))
         self.label.setText(_translate("Dialog", "Enter the path:"))
         self.label_2.setText(_translate("Dialog", "Project-X ~ Secure Vault"))
@@ -122,6 +131,7 @@ class Ui_Dialog(object):
         self.label_4.setText(_translate("Dialog", "Enter File Name:"))
         self.pushButton_3.setText(_translate("Dialog", "Unlock Files"))
         self.label_5.setText(_translate("Dialog", " "))
+        self.pushButton_4.setText(_translate("Dialog", "Change Password"))
     
     def refreshList(self):
         text=os.popen("ls mountdir").read()
@@ -161,7 +171,23 @@ class Ui_Dialog(object):
             time.sleep(0.025) 
             self.progressBar.setValue(i) 
         self.progressBar.setValue(0) 
-        
+    
+    def changePass(self):
+        _translate = QtCore.QCoreApplication.translate
+        a=os.system("mkdir temp")
+        if a==0:
+            b=os.system("mv mountdir/* temp/")
+            if b==0:
+                c=os.system("fusermount -u mountdir")
+                if c==0:
+                    d=os.system("rm -rf basedir mountdir")
+                    if d==0:
+                        decrypt()
+                        os.system("mv temp/* mountdir/")
+                        os.system("rm -rf temp")
+                        self.label_5.setText(_translate("Dialog", "Changing Password..."))
+                        self.doAction()
+                        self.label_5.setText(_translate("Dialog", " "))
         
 if __name__ == "__main__":
     import sys

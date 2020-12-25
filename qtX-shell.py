@@ -24,7 +24,7 @@ class Ui_Dialog(object):
         Dialog.setSizeGripEnabled(False)
         Dialog.setModal(False)
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(240, 720, 104, 41))
+        self.pushButton.setGeometry(QtCore.QRect(160, 720, 104, 41))
         font = QtGui.QFont()
         font.setFamily("URW Gothic")
         font.setBold(False)
@@ -89,6 +89,14 @@ class Ui_Dialog(object):
         self.progressBar.setGeometry(QtCore.QRect(170, 450, 241, 24))
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
+        self.pushButton_4 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_4.setGeometry(QtCore.QRect(320, 720, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("URW Gothic")
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setObjectName("pushButton_4")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -104,6 +112,7 @@ class Ui_Dialog(object):
         self.label_4.setText(_translate("Dialog", "Enter File Name:"))
         self.pushButton_3.setText(_translate("Dialog", "Unlock Files"))
         self.label_5.setText(_translate("Dialog", "Unlocking Files"))
+        self.pushButton_4.setText(_translate("Dialog", "Change Password"))
 
 
 if __name__ == "__main__":
