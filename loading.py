@@ -12,10 +12,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import time
 import os
 
+#initflag=(0==os.system("ls basedir"))
+
 def decrypt():
     os.system("konsole -e cryfs basedir mountdir")   
     dir = os.listdir("mountdir") 
-    return len(dir)
+    dir2 = os.listdir("basedir") 
+    return len(dir),len(dir2)
 
 #decrypt()
 
@@ -78,8 +81,8 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Open Vault!"))
 
     def doAction(self):
-        b=self.passDecry()
-        if b==0:
+        b,a=self.passDecry()
+        if a>2 and b==0:
             print("Please check your password!")
             self.label.setText(QtCore.QCoreApplication.translate("Dialog", "Incorrect password entered!"))
             self.doAction()
